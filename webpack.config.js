@@ -14,6 +14,13 @@ module.exports = {
   },
   module: {
   rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: [/node_modules/,/pyodide/],
+        use: {
+          loader: "babel-loader"
+        }
+      },
       {test: /\.py$/,
        use: 'raw-loader'
       }
